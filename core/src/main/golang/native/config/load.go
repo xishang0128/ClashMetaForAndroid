@@ -9,6 +9,7 @@ import (
 	"gopkg.in/yaml.v2"
 
 	"cfa/native/app"
+
 	"github.com/metacubex/mihomo/log"
 
 	"github.com/metacubex/mihomo/config"
@@ -75,7 +76,7 @@ func Load(path string) error {
 
 		return err
 	}
-
+	log.Infoln("config: %s", cfg)
 	executor.ApplyConfig(cfg, true)
 
 	app.ApplySubtitlePattern(rawCfg.ClashForAndroid.UiSubtitlePattern)
